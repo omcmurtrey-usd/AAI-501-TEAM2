@@ -1,4 +1,5 @@
 # AI Sec Watch Dataset: AI/LLM Security Threat Intelligence
+Data: https://zenodo.org/records/23282466 
 
 Version 4.0, generated on 2026-10-10. Concept DOI 10.5281/zenodo.19519469 always resolves to the latest version.
 
