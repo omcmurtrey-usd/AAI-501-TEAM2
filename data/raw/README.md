@@ -8,6 +8,7 @@ This folder contains the original datasets used in this project.
 
 All data cleaning and preprocessing should be performed on copies of the raw files.
 Data: https://zenodo.org/records/23282466
+
 Why it matters
 993 of 2,876 AI vulnerabilities in the dataset (35%) have no official CVSS severity score yet. Security teams still have to decide what to patch first. We could build models that estimate severity from the description and metadata.
 
