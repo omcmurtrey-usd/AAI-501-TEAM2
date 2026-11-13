@@ -1,26 +1,59 @@
 # Raw Data
 
-This folder contains the original datasets used in this project.
+## Overview
 
-- **Purpose:** Store source data before cleaning, preprocessing, or transformation.
-- **Data integrity:** Raw files should remain unchanged to ensure reproducibility.
-- **Processing:** Cleaned and transformed datasets are stored separately in the `processed_data` folder.
+This folder contains the original, unmodified datasets used in the **Predicting the Severity of AI and LLM Vulnerabilities** project.
 
-All data cleaning and preprocessing should be performed on copies of the raw files.
-Data: https://zenodo.org/records/23282466
+Raw data is preserved to ensure reproducibility and traceability throughout data cleaning, preprocessing, and machine learning experiments.
 
-Why it matters
-993 of 2,876 AI vulnerabilities in the dataset (35%) have no official CVSS severity score yet. Security teams still have to decide what to patch first. We could build models that estimate severity from the description and metadata.
+## Dataset Information
 
-The data
-• AI Sec Watch Dataset v4.0, Oct 2026, CC BY 4.0 (Zenodo, Texas State University)
-• 8,260 AI security records, 48 columns, from 75 public sources including NIST NVD, GitHub Advisory and vendor advisories
-• 2,876 vulnerabilities in AI software: LangChain, vLLM, MLflow, n8n, Flowise, TensorFlow, agent frameworks and model APIs
-• Columns include CVSS score, severity, weakness type, affected package, attack type (prompt injection, supply chain, jailbreak, data extraction, model poisoning), AI component targeted (agent, plugin, RAG, API) and vendor
+**Dataset:** AI Sec Watch Dataset v4.0  
+**Release:** October 2026  
+**Source:** [Zenodo – AI Sec Watch Dataset](https://zenodo.org/records/23282466)  
+**License:** CC BY 4.0  
+**Institution:** Texas State University
 
-Potential areas to explore
-• Regression: predict the CVSS score (0-10) on 1,883 scored records
-• Classification: predict the severity level (low, medium, high, critical) on 2,444 records
-• Clustering: group vulnerabilities by attack pattern and targeted AI component
-• Experimental comparison: several models per task, plus a time test (train before 2026, test on 2026)
-• Demo: score the 993 unscored vulnerabilities
+### Dataset Summary
+
+- **8,260** AI security records with 48 columns, aggregated from 75 public sources, including NIST NVD, GitHub Advisory Database, and vendor advisories.
+- **2,876** vulnerabilities affecting AI software, including LangChain, vLLM, MLflow, n8n, Flowise, TensorFlow, agent frameworks, and model APIs.
+- **993 vulnerabilities (35%)** lack an official CVSS severity score.
+
+### Available Features
+
+The dataset includes:
+
+- Vulnerability descriptions and CVSS scores
+- Severity classifications (Low, Medium, High, Critical)
+- Weakness types and affected software packages
+- Attack types, including prompt injection, supply chain attacks, jailbreaks, data extraction, and model poisoning
+- Targeted AI components, such as agents, plugins, RAG systems, and APIs
+- Vendor and advisory information
+
+## Research Relevance
+
+Many AI vulnerabilities lack official severity ratings, creating challenges for security teams prioritizing remediation.
+
+This dataset supports research into predicting vulnerability severity using machine learning, particularly:
+
+- **Classification:** Predict severity levels from vulnerability descriptions and relevant metadata.
+- **Regression:** Explore predicting numerical CVSS scores.
+- **Clustering:** Identify patterns across attack types and targeted AI components.
+- **Model Comparison:** Evaluate different machine learning approaches, including performance on newer vulnerabilities.
+
+The project's primary objective is **severity classification**, with clustering as a supporting analysis.
+
+## Data Handling
+
+- **Raw data integrity:** Original files must remain unchanged.
+- **Preprocessing:** Perform cleaning and transformations on copies of the raw data.
+- **Processed data:** Store cleaned datasets in `data/processed/`.
+- **Data leakage prevention:** Exclude CVSS scores, existing severity labels, and other fields that directly reveal the target severity from model inputs.
+- **Reproducibility:** Document all cleaning and preprocessing steps.
+
+## Citation
+
+AI Sec Watch Dataset v4.0 (October 2026). Available from [Zenodo](https://zenodo.org/records/23282466).
+
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
